@@ -8,12 +8,12 @@ class Words extends Component {
         "synonyms": "demean, humiliate "
       },
       {
-        "Abate {uh-bayt}": "(v) to reduce in amouhnt, degree or severity.",
+        "Abate {uh-bayt}": "(v) to reduce in amount, degree or severity.",
         "synonyms": "ebb, lapse, let up, moderate, relent, slacken, subside, wane"
       },
       {
         "Abdicate {aab-duh-kayt}": "(v) to give up a position, right or power.",
-        "synonyms": "cede, relinquish, resivn, quit, yield"
+        "synonyms": "cede, relinquish, resign, quit, yield"
       },
     ],
     cardSide: true,
@@ -31,6 +31,7 @@ class Words extends Component {
   render() {
     return (
       <>
+        <p className="logo">WordUp</p>
         <article className="card cardBody ">
           <section className={this.state.cardSide ? "" : "flipped"}>
             <h1 className={this.state.cardSide ? "cardFront" : " cardBack"}>{this.state.cardSide ? this.randomizeNewWord : this.wordDefinition}</h1>

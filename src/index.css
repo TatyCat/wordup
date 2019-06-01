@@ -22,6 +22,18 @@ h1 {
   line-height: 1.2;
 }
 
+.logo {
+  color: #fefefe !important;
+  font-size: 2.5vh;
+  z-index: 10;
+  position: absolute;
+  bottom: 1.5vh;
+  right: 1.5vh;
+  letter-spacing: 0.1ch;
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .form-container {
   display: flex;
   background-color: #EEE;
@@ -136,40 +148,30 @@ h1 {
   text-align: center;
   font-size: calc(2vh + 1vw);
   padding: 9vw 5vw;
-  /* card-container  */
-  perspective: 2500px;
-  /* perspective: 1000px; */
-  backface-visibility: hidden;
+  perspective: 1000px;
+  max-height: 50%;
 }
 
 .card section {
-  /*  id="card"> */
   transform-style: preserve-3d;
-  transition: all .8s linear;
+  transition: all .1s linear;
+}
+
+.card .flipped button {
+  transform: rotateY(-180deg);
 }
 
 .card .flipped {
-  /*  id="card"> */
+  background-color: #F5F9F9 !important;
+  color: rgb(46, 45, 45);
   transform: rotateY(180deg);
-  /* box-shadow: -5px 5px 15px rgba(0, 0, 0, .3); */
-  /* position: absolute; */
-  top: 50%;
-  left: 50%;
   width: 80%;
   box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
-  border: 0;
   border-radius: .25rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  /* transform: translate(-50%, -50%); */
-  /* z-index: 3; */
-  background-color: #fefefe;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  font-size: calc(2vh + 1vw);
   padding: 9vw 5vw;
 }
 
