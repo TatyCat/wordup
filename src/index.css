@@ -18,7 +18,6 @@ h1 {
   font-weight: 100;
   font-size: 1.4em;
   display: block;
-  cursor: pointer;
 }
 
 .form-container {
@@ -37,7 +36,7 @@ h1 {
 /* spinner loader */
 
 .spinner {
-  margin: 10px auto;
+  margin: 07px auto;
   width: 50px;
   height: 40px;
   font-size: 2rem;
@@ -99,7 +98,7 @@ h1 {
 
 .textUp {
   position: relative;
-  animation: animatetext 0.8s ease-in-out 0s forwards;
+  animation: animatetext 3s ease-in-out 0s forwards;
 }
 
 @keyframes animatetext {
@@ -111,4 +110,52 @@ h1 {
     top: -300px;
     opacity: 0;
   }
+}
+
+/* Vocab Card */
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+  border: 0;
+  border-radius: .25rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  background-color: #fefefe;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: calc(2vh + 1vw);
+  padding: 9vw 5vw;
+}
+
+.btn {
+  color: rgb(145, 187, 192);
+  width: 10em;
+  transition: all .4s;
+  border-radius: 18px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  width: 25vh;
+  height: 5.3vh;
+  margin: 0 .2rem;
+  padding: 0;
+  transition: opacity .3s ease-in;
+  font-size: 1rem;
+  background-color: rgba(145, 187, 192, 0.315);
+  letter-spacing: .1ch;
+}
+
+.btn:hover {
+  opacity: .7;
 }
