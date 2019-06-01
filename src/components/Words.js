@@ -31,9 +31,9 @@ class Words extends Component {
   render() {
     return (
       <>
-        <article className="card cardBody">
-          <section >
-            <h1 className="cardFront">{this.state.cardSide ? this.randomizeNewWord : this.wordDefinition}</h1>
+        <article className="card cardBody ">
+          <section className={this.state.cardSide ? "" : "flipped"}>
+            <h1 className={this.state.cardSide ? "cardFront" : " cardBack"}>{this.state.cardSide ? this.randomizeNewWord : this.wordDefinition}</h1>
             <p className="cardBack"> {this.state.cardSide ? "" : this.wordSynonyms} </p>
 
             <button className="btn" onClick={this.flipCard}>FLIP CARD</button>
