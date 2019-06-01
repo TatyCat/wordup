@@ -129,9 +129,6 @@ h1 {
   transform: translate(-50%, -50%);
   z-index: 3;
   background-color: #fefefe;
-}
-
-.cardBody {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -142,20 +139,38 @@ h1 {
   /* card-container  */
   perspective: 2500px;
   /* perspective: 1000px; */
+  backface-visibility: hidden;
 }
 
-/* backface-visibility: hidden; */
-
-.cardBody section {
+.card section {
   /*  id="card"> */
   transform-style: preserve-3d;
   transition: all .8s linear;
 }
 
-.cardBody .flipped {
+.card .flipped {
   /*  id="card"> */
   transform: rotateY(180deg);
   /* box-shadow: -5px 5px 15px rgba(0, 0, 0, .3); */
+  /* position: absolute; */
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+  border: 0;
+  border-radius: .25rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  /* transform: translate(-50%, -50%); */
+  /* z-index: 3; */
+  background-color: #fefefe;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: calc(2vh + 1vw);
+  padding: 9vw 5vw;
 }
 
 .cardFront {
