@@ -18,6 +18,8 @@ h1 {
   font-weight: 100;
   font-size: 1.4em;
   display: block;
+  margin-bottom: 3.5vh;
+  line-height: 1.2;
 }
 
 .form-container {
@@ -149,6 +151,7 @@ h1 {
   width: 25vh;
   height: 5.3vh;
   margin: 0 .2rem;
+  margin-top: 1rem;
   padding: 0;
   transition: opacity .3s ease-in;
   font-size: 1rem;
@@ -158,4 +161,9 @@ h1 {
 
 .btn:hover {
   opacity: .7;
+}
+
+.card p {
+  font-size: 2.4vh;
+  /* font-weight: lighter; */
 }

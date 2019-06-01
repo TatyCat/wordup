@@ -12,7 +12,7 @@ class Words extends Component {
         "synonyms": "ebb, lapse, let up, moderate, relent, slacken, subside, wane"
       },
       {
-        "Abdicate {aab-duh-kayt}": "to give up a position, right or power.",
+        "Abdicate {aab-duh-kayt}": "(v) to give up a position, right or power.",
         "synonyms": "cede, relinquish, resivn, quit, yield"
       },
     ],
@@ -21,23 +21,20 @@ class Words extends Component {
 
   generateRandomNumber = this.state.greVocab[Math.floor(Math.random() * this.state.greVocab.length)]
   randomizeNewWord = Object.keys(this.generateRandomNumber)[0]
-  wordDefinition = this.generateRandomNumber["synonyms"]
+  wordDefinition = `Definition: ${Object.values(this.generateRandomNumber)[0]}`
+  wordSynonyms = `Synonyms: ${this.generateRandomNumber["synonyms"]}`
 
   flipCard = () => {
     this.setState({ cardSide: !this.state.cardSide })
-
-  }
-
-  componentDidMount() {
-
   }
 
   render() {
     return (
       <>
         <article className="card cardBody">
-          <section className="">
-            <h1>{this.state.cardSide ? this.randomizeNewWord : this.wordDefinition}</h1>
+          <section >
+            <h1 className="cardFront">{this.state.cardSide ? this.randomizeNewWord : this.wordDefinition}</h1>
+            <p className="cardBack"> {this.state.cardSide ? "" : this.wordSynonyms} </p>
 
             <button className="btn" onClick={this.flipCard}>FLIP CARD</button>
           </section>
