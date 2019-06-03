@@ -139,7 +139,7 @@ h1 {
   padding-top: 1rem;
   padding-bottom: 1rem;
   transform: translate(-50%, -50%);
-  z-index: 3;
+  /* z-index: 3; */
   background-color: #fefefe;
   display: flex;
   flex-direction: column;
@@ -162,7 +162,7 @@ h1 {
 }
 
 .card .flipped {
-  background-color: #F5F9F9 !important;
+  background-color: #F5F9F9;
   color: rgb(46, 45, 45);
   transform: rotateY(180deg);
   width: 80%;
@@ -209,4 +209,28 @@ h1 {
 
 .card p {
   font-size: 2.4vh;
+}
+
+@media screen and (max-device-width: 830px) {
+  .card {
+    perspective: none;
+  }
+  .card section {
+    transform-style: unset;
+    transition: all .1s linear;
+  }
+  .card .flipped button {
+    transform: none;
+  }
+  .card .flipped {
+    /* background-color: #F5F9F9; */
+    transform: none;
+    box-shadow: none;
+  }
+  .cardFront {
+    backface-visibility: unset;
+  }
+  .cardBack {
+    transform: none;
+  }
 }
