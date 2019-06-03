@@ -1,45 +1,44 @@
 import React, { Component } from 'react';
+import wordCache from '../data/wordCache.json'
 
 class Words extends Component {
   state = {
     greVocab: [
-      {
-        "Abase {uh-bays}": "(v) to humble; disgrace.",
-        "synonyms": "demean, humiliate "
-      },
-      {
-        "Abate {uh-bayt}": "(v) to reduce in amount, degree or severity.",
-        "synonyms": "ebb, lapse, let up, moderate, relent, slacken, subside, wane"
-      },
-      {
-        "Abdicate {aab-duh-kayt}": "(v) to give up a position, right or power.",
-        "synonyms": "cede, relinquish, resign, quit, yield"
-      },
     ],
     cardSide: true,
+    generateWord: {}
   }
-
-  generateRandomNumber = this.state.greVocab[Math.floor(Math.random() * this.state.greVocab.length)]
-  randomizeNewWord = Object.keys(this.generateRandomNumber)[0]
-  wordDefinition = `Definition: ${Object.values(this.generateRandomNumber)[0]}`
-  wordSynonyms = `Synonyms: ${this.generateRandomNumber["synonyms"]}`
 
   flipCard = () => {
     this.setState({ cardSide: !this.state.cardSide })
   }
 
+  componentWillMount() {
+    this.setState({ greVocab: wordCache["greVocab"] })
+  }
+  componentDidMount() {
+    this.setState({ generateWord: this.state.greVocab[Math.floor(Math.random() * this.state.greVocab.length)] })
+  }
+
+  renderWord = () => {
+    return Object.keys(this.state.generateWord)[0]
+  }
+  wordDefinition = () => {
+    return `Definition: ${Object.values(this.state.generateWord)[0]}`
+  }
+  wordSynonyms = () => {
+    return `Synonyms: ${this.state.generateWord["synonyms"]}`
+  }
+
   render() {
     return (
       <>
-        <p className="logo">WordUp</p>
         <article className="card cardBody ">
           <section className={this.state.cardSide ? "" : "flipped"}>
-            <h1 className={this.state.cardSide ? "cardFront" : " cardBack"}>{this.state.cardSide ? this.randomizeNewWord : this.wordDefinition}</h1>
-            <p className="cardBack"> {this.state.cardSide ? "" : this.wordSynonyms} </p>
-
+            <h1 className={this.state.cardSide ? "cardFront" : " cardBack"}>{this.state.cardSide ? this.renderWord() : this.wordDefinition()}</h1>
+            <p className="cardBack"> {this.state.cardSide ? "" : this.wordSynonyms()} </p>
             <button className="btn" onClick={this.flipCard}>FLIP CARD</button>
           </section>
-
         </article>
       </>
     );
