@@ -29,7 +29,10 @@ class Words extends Component {
   wordSynonyms = () => {
     return `Synonyms: ${this.state.generateWord["synonyms"]}`
   }
-
+  nextWord = () => {
+    this.setState({ generateWord: this.state.greVocab[Math.floor(Math.random() * this.state.greVocab.length)] })
+    this.renderWord()
+  }
   render() {
     return (
       <>
@@ -40,6 +43,7 @@ class Words extends Component {
             <button className="btn" onClick={this.flipCard}>FLIP CARD</button>
           </section>
         </article>
+        <button className="newCardButton" onClick={this.nextWord}>Next</button>
       </>
     );
   }

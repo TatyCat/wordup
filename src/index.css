@@ -25,7 +25,7 @@ h1 {
 .logo {
   color: #fefefe !important;
   font-size: 2.5vh;
-  z-index: 10;
+  z-index: 1;
   position: absolute;
   bottom: 1.5vh;
   right: 1.5vh;
@@ -39,9 +39,8 @@ h1 {
   background-color: #EEE;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  min-height: 100vh;
   flex-direction: column;
+  min-height: 100vh;
   border: 1em solid #fff;
   box-sizing: border-box;
   position: relative;
@@ -139,7 +138,6 @@ h1 {
   padding-top: 1rem;
   padding-bottom: 1rem;
   transform: translate(-50%, -50%);
-  /* z-index: 3; */
   background-color: #fefefe;
   display: flex;
   flex-direction: column;
@@ -211,7 +209,38 @@ h1 {
   font-size: 2.4vh;
 }
 
+.newCardButton {
+  letter-spacing: .1ch;
+  padding: .2vh 1vh;
+  color: white;
+  font-size: 3vh;
+  border: none;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-position: center;
+  transition: background 0.8s;
+}
+
+.newCardButton:hover {
+  background: #DADADA radial-gradient(circle, transparent 1%, #D3E3E5 1%) center/15000%;
+}
+
+.newCardButton:active {
+  background-color: rgba(145, 187, 192, 0.575);
+  background-size: 100%;
+  transition: background 0s;
+}
+
 @media screen and (max-device-width: 830px) {
+  .newCardButton {
+    font-size: 4.5vw;
+  }
+  .form-container {
+    min-height: -webkit-fill-available !important;
+  }
   .card {
     perspective: none;
   }
