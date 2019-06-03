@@ -23,6 +23,7 @@ class LoadPg extends Component {
   render() {
     return (
       <main className="form-container">
+        <p className="logo">WordUp</p>
         {this.state.loading &&
           <>
             <h1 onClick={this.showLoader} className={this.state.loading ? "textUp" : ""}>WordUp</h1>
