@@ -231,3 +231,12 @@ button:focus {
   background-size: 100%;
   transition: background 0s;
 }
+
+@media screen and (max-device-width: 830px) {
+  .newCardButton {
+    font-size: 4.5vw;
+  }
+  .form-container {
+    min-height: -webkit-fill-available;
+  }
+}
