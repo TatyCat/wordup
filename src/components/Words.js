@@ -31,22 +31,26 @@ class Words extends Component {
   }
   nextWord = () => {
     this.setState({ generateWord: this.state.greVocab[Math.floor(Math.random() * this.state.greVocab.length)] })
+    this.setState({ cardSide: true })
     this.renderWord()
   }
+
   render() {
     return (
       <>
-        <article className="card cardBody ">
+        <article className="card">
           <section className={this.state.cardSide ? "" : "flipped"}>
-            <h1 className={this.state.cardSide ? "cardFront" : " cardBack"}>{this.state.cardSide ? this.renderWord() : this.wordDefinition()}</h1>
+            <h1 className={this.state.cardSide ? "" : " cardBack"}>{this.state.cardSide ? this.renderWord() : this.wordDefinition()}</h1>
             <p className="cardBack"> {this.state.cardSide ? "" : this.wordSynonyms()} </p>
             <button className="btn" onClick={this.flipCard}>FLIP CARD</button>
           </section>
         </article>
-        <button className="newCardButton" onClick={this.nextWord}>Next</button>
+        <button className="newCardButton" onClick={this.nextWord}>NEXT&#8634;	</button>
       </>
     );
   }
 }
 
 export default Words;
+
+// {"{}": "", "synonyms": ""},

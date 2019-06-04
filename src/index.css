@@ -132,12 +132,11 @@ h1 {
   top: 50%;
   left: 50%;
   width: 80%;
-  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+  box-shadow: 0 .5rem 1rem rgba(179, 65, 65, 0.15) !important;
   border: 0;
   border-radius: .25rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
   background-color: #fefefe;
   display: flex;
   flex-direction: column;
@@ -147,40 +146,33 @@ h1 {
   font-size: calc(2vh + 1vw);
   padding: 9vw 5vw;
   perspective: 1000px;
+  -webkit-perspective: 1000px;
   max-height: 50%;
 }
 
 .card section {
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
   transition: all .1s linear;
+  -webkit-transition: all .1s linear;
 }
 
 .card .flipped button {
-  transform: rotateY(-180deg);
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
 }
 
 .card .flipped {
-  background-color: #F5F9F9;
   color: rgb(46, 45, 45);
   transform: rotateY(180deg);
-  width: 80%;
-  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
-  border-radius: .25rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 9vw 5vw;
-}
-
-.cardFront {
-  backface-visibility: hidden;
+  height: auto;
 }
 
 .cardBack {
-  display: block;
+  /* targets text */
   transform: rotateY(180deg);
-  box-sizing: border-box;
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
 }
 
 .btn {
@@ -205,11 +197,16 @@ h1 {
   opacity: .7;
 }
 
+button:focus {
+  outline: 0;
+}
+
 .card p {
   font-size: 2.4vh;
 }
 
 .newCardButton {
+  background-color: transparent;
   letter-spacing: .1ch;
   padding: .2vh 1vh;
   color: white;
@@ -221,6 +218,7 @@ h1 {
   right: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-position: center;
+  border-left: whitesmoke 1px solid;
   transition: background 0.8s;
 }
 
@@ -232,34 +230,4 @@ h1 {
   background-color: rgba(145, 187, 192, 0.575);
   background-size: 100%;
   transition: background 0s;
-}
-
-@media screen and (max-device-width: 830px) {
-  .newCardButton {
-    font-size: 4.5vw;
-  }
-  .form-container {
-    min-height: -webkit-fill-available !important;
-  }
-  .card {
-    perspective: none;
-  }
-  .card section {
-    transform-style: unset;
-    transition: all .1s linear;
-  }
-  .card .flipped button {
-    transform: none;
-  }
-  .card .flipped {
-    /* background-color: #F5F9F9; */
-    transform: none;
-    box-shadow: none;
-  }
-  .cardFront {
-    backface-visibility: unset;
-  }
-  .cardBack {
-    transform: none;
-  }
 }
